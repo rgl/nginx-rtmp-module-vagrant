@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>live hls in hls.js</title>
+        <script src="/hls.light.js"></script>
+    </head>
+    <body>
+        <video id="video"></video>
+        <script>
+        if (Hls.isSupported()) {
+            var video = document.getElementById('video');
+            // see https://github.com/video-dev/hls.js/blob/master/doc/API.md
+            var hls = new Hls();
+            hls.loadSource('/hls/live/index.m3u8');
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
+        </script>
+    </body>
+</html>

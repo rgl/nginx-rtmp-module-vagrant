@@ -1,0 +1,23 @@
+syntax on
+set background=dark
+set esckeys
+set ruler
+set laststatus=2
+set nobackup
+
+autocmd BufNewFile,BufRead Vagrantfile set ft=ruby
+autocmd BufNewFile,BufRead *.config set ft=xml
+
+" Usefull setting for working with Ruby files.
+autocmd FileType ruby set tabstop=2 shiftwidth=2 smarttab expandtab softtabstop=2 autoindent
+autocmd FileType ruby set smartindent cinwords=if,elsif,else,for,while,try,rescue,ensure,def,class,module
+
+" Usefull setting for working with Python files.
+autocmd FileType python set tabstop=4 shiftwidth=4 smarttab expandtab softtabstop=4 autoindent
+" Automatically indent a line that starts with the following words (after we press ENTER).
+autocmd FileType python set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+" Usefull setting for working with Go files.
+autocmd FileType go set tabstop=4 shiftwidth=4 smarttab expandtab softtabstop=4 autoindent
+" Automatically indent a line that starts with the following words (after we press ENTER).
+autocmd FileType go set smartindent cinwords=if,else,switch,for,func

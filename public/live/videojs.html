@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>live hls in video.js</title>
+        <link href="/video-js.css" rel="stylesheet">
+        <script src="/video.js"></script>
+        <script src="/videojs-contrib-hls.js"></script>
+    </head>
+    <body>
+        <video id="player" class="video-js vjs-default-skin" width="575" height="240" controls autoplay preload="none">
+            <source src="/hls/live/index.m3u8" type="application/x-mpegURL" />
+        </video>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var player = videojs('#player');
+                window.player = player; // NB this makes the object available on the debug console.
+            });
+        </script>
+    </body>
+</html>
